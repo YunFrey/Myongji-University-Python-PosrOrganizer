@@ -1,0 +1,8 @@
+#Requirements (do not remove or change to utf-8)
+
+pandas
+scikit-learn
+lxml
+selenium
+get-chrome-driver
+XlsxWriter

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1064</width>
+    <height>598</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>접수우편물 조회 및 결재</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>title_big.png</normaloff>title_big.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1,0,1,0">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="minimumSize">
+           <size>
+            <width>180</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>130</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color : rgba(0,0,0,0%)</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'맑은 고딕'; font-size:12pt; font-weight:696;&quot;&gt;우편물 조회 및 결재&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::NoTextInteraction</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>접수날짜</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="datesel_start">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="datesel_end">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="btn_loadpostlist">
+          <property name="text">
+           <string>조회</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="info_14_isprocessed">
+          <property name="text">
+           <string>결재된 우편물만 조회 </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btn_selectallrow_up">
+        <property name="text">
+         <string>전체선택</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="table_postlist">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectItems</enum>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::NoPen</enum>
+        </property>
+        <property name="cornerButtonEnabled">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>접수날짜</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>사원번호</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>접수자명</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>부서명</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>보내는사람</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>받는사람</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>주소</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>제목</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>수량</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>종류</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>긴급여부</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>세로길이</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>우편중량</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>높이</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>메모</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>할인타입</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>할인타입그룹</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>결재여부</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>반려여부</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0">
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_setpostready">
+          <property name="text">
+           <string>결재대상</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>338</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="btn_returnpost">
+          <property name="text">
+           <string>반려</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QToolButton" name="btn_selectallrow_down">
+          <property name="text">
+           <string>전체선택</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QProgressBar" name="progressBar">
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>결재 대상 우편물</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="table_postlist_sel">
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>접수날짜</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>사원번호</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>접수자명</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>부서명</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>보내는사람</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>받는사람</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>주소</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>제목</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>수량</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>종류</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>긴급여부</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>세로길이</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>우편중량</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>높이</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>메모</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>할인타입</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>할인타입그룹</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>결재여부</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>반려여부</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0,0,0,0,0,0,0">
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>338</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_startkmeans">
+          <property name="text">
+           <string>2.군집화정렬</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="8">
+         <widget class="QPushButton" name="btn_postend">
+          <property name="text">
+           <string>6.결재</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <widget class="QPushButton" name="btn_grouppost">
+          <property name="text">
+           <string>4.묶음할인 설정</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btn_organizepost">
+          <property name="text">
+           <string>1.규격정리</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="7">
+         <widget class="QPushButton" name="btn_makedocx">
+          <property name="text">
+           <string>5.리스트 출력</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QPushButton" name="btn_calculatefee">
+          <property name="text">
+           <string>3.요금 붙이기</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QToolButton" name="btn_remove_selpost">
+          <property name="text">
+           <string>선택항목 삭제</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1064</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>메뉴</string>
+    </property>
+    <addaction name="action_closewindow"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_closewindow">
+   <property name="text">
+    <string>창 닫기</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
